@@ -1,29 +1,24 @@
-let person: {
-    name: string;
-    age: number;
-    gender: string;
-    hobbies: string[];
-    roles: [number, string];
-} = {
-    name: "",
-    age: 0,
-    gender: "",
-    hobbies: ["playing", "cooking"],
-    roles: [20, "admin"],
+const combineType = (
+    n1: number | string,
+    n2: number | string,
+    resultconversion: "as-number" | "as-text"
+) => {
+    if (
+        (typeof n1 === "number" &&
+            typeof n2 === "number" &&
+            resultconversion === "as-number") ||
+        resultconversion === "as-number"
+    ) {
+        return +n1 + +n2;
+    }
+    return n1.toString() + n2.toString();
 };
 
-person.name = "john doe";
-person.age = 23;
-person.gender = "male";
+const combineAges = combineType(23, 12, "as-number");
+console.log(combineAges);
 
-console.log(person);
+const combineAges2 = combineType(23, 12, "as-text");
+console.log(combineAges);
 
-let activities: string[];
-activities = ["playing", "3"];
-console.log(activities);
-
-enum Roles {
-    ADMIN,
-    SELLER,
-    BUYER,
-}
+const combineStrings = combineType("3", "3", "as-number");
+console.log(combineStrings);
