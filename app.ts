@@ -1,21 +1,29 @@
-const add = (
-    n1: number,
-    n2: number,
-    printIt: boolean,
-    resultString: string
-) => {
-    let result = n1 + n2;
-    if (printIt) {
-        console.log(`${resultString}: ${result}`);
-    } else {
-        return n1 + n2;
-    }
+let person: {
+    name: string;
+    age: number;
+    gender: string;
+    hobbies: string[];
+    roles: [number, string];
+} = {
+    name: "",
+    age: 0,
+    gender: "",
+    hobbies: ["playing", "cooking"],
+    roles: [20, "admin"],
 };
 
-const number1 = "5";
-const number2 = 3;
-const printThis = true;
+person.name = "john doe";
+person.age = 23;
+person.gender = "male";
 
-add(+number1, +number2, printThis, "The result is");
-const result = add(number2, 4, false, "");
-console.log(result, typeof result);
+console.log(person);
+
+let activities: string[];
+activities = ["playing", "3"];
+console.log(activities);
+
+enum Roles {
+    ADMIN,
+    SELLER,
+    BUYER,
+}
