@@ -1,7 +1,9 @@
+import { combinedConvertionType } from "./customTypes";
+
 const combineType = (
     n1: number | string,
     n2: number | string,
-    resultconversion: "as-number" | "as-text"
+    resultconversion: combinedConvertionType
 ) => {
     if (
         (typeof n1 === "number" &&
