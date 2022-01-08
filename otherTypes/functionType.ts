@@ -1,4 +1,4 @@
-const add = (n1: number, n2: number) : number => {
+const addition = (n1: number, n2: number) : number => {
     return n1 + n2
 }
 
@@ -11,11 +11,11 @@ const addAndHandle = (n1: number, n2: number, cb: (num:number) => void) => {
     cb(result)
 }
 
-printResult(add(1, 12));
+printResult(addition(1, 12));
 
 let combineValues : (a: number, b: number) => number;
 
-combineValues = add;
+combineValues = addition;
 
 console.log(combineValues(9, 9))
 
